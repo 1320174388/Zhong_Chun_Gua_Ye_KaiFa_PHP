@@ -9,7 +9,6 @@
  */
 namespace app\right_module\working_version\v3\service;
 use \think\Db;
-use app\login_module\working_version\v1\model\UserModel;
 use app\right_module\working_version\v3\dao\ApplyDao;
 use app\right_module\working_version\v3\dao\AdminDao;
 use app\right_module\working_version\v3\dao\UserDao;
@@ -42,18 +41,11 @@ class AdminService
             $admin = (new AdminDao)->adminCreate($data['data'],$roletArr);// 返回数据格式
             if($admin['msg']=='error') return returnData('error','审核失败');
 
-            // 获取最高管理员openid
-            $userModel = new UserModel();
-            // 加载配置项表信息
-            $userModel->userInit();
-            // 查询用户信息
-            $user = $userModel->where('user_id',1)->find();
-
             // 实例化发送模板消息类库
             $pushLibrary = new PushLibrary();
             // 处理模板消息数据
             $data = [
-                'touser'           => $user['user_openid'],
+                'touser'           => $apply['apply_token'],
                 'template_id'      => config('wx_config.wx_Push_Adopt'),
                 'page'             => '/pages/index/index',
                 'form_id'          => $apply['apply_formid'],
@@ -67,7 +59,6 @@ class AdminService
             ];
             // 发送模板消息
             $pushLibrary->sendTemplate($data);
-
             // 删除管理员申请数据
             (new ApplyDao)->applyDelete($token);
 
