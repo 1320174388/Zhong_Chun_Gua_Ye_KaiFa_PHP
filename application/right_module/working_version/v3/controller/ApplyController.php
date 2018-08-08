@@ -35,26 +35,29 @@ class ApplyController extends Controller
      * 名  称 : applyInit()
      * 功  能 : 执行用户申请管理员操作
      * 变  量 : --------------------------------------
-     * 输  入 : (string) $token => '用户标识';
-     * 输  入 : (string) $name  => '用户名称';
-     * 输  入 : (string) $phone => '用户电话';
+     * 输  入 : (string) $token  => '用户标识';
+     * 输  入 : (string) $name   => '用户名称';
+     * 输  入 : (string) $phone  => '用户电话';
+     * 输  入 : (string) $formId => '表单ID';
      * 输  出 : {"errNum":0,"retMsg":"申请成功","retData":true}
      * 创  建 : 2018/06/16 09:43
      */
     public function applyInit(Request $request)
     {
         // 获取前端提交的用户申请数据
-        $token = $request->post('userToken');
-        $name  = $request->post('applyName');
-        $phone = $request->post('applyPhone');
+        $token  = $request->post('userToken');
+        $name   = $request->post('applyName');
+        $phone  = $request->post('applyPhone');
+        $formId = $request->post('applyFormId');
         // 传值参数
-        if(!$token)return returnResponse(1,'没有发送用户身份标识');
-        if(!$name) return returnResponse(2,'请输入姓名');
+        if(!$token)  return returnResponse(1,'没有发送用户身份标识');
+        if(!$name)   return returnResponse(2,'请输入姓名');
+        if(!$formId) return returnResponse(2,'请发送表单ID');
         // 验证电话号码
         if((!$phone)||(!is_numeric($phone))||(strlen($phone)!=11))
             return returnResponse(3,'请正确输入电话');
         // 引入逻辑代码，执行用户申请操作
-        $res = (new ApplyService())->rightApply($token,$name,$phone);
+        $res = (new ApplyService())->rightApply($token,$name,$phone,$formId);
         // 判断用户是否申请成功
         if($res['msg']=='error')return returnResponse(4,'已申请管理员');
         if($res['msg']=='error')return returnResponse(5,'申请失败');

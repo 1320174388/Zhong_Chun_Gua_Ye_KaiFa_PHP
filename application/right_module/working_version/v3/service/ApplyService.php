@@ -20,11 +20,12 @@ class ApplyService
      * 输  入 : (string) $token => '用户标识';
      * 输  入 : (string) $name  => '用户名称';
      * 输  入 : (string) $phone => '用户电话';
+     * 输  入 : (string) $formId => '表单ID';
      * 输  出 : [ 'msg'=>'success' , 'data'=>$info['data'] ]
      * 输  出 : [ 'msg'=>'error'   , 'data'=>false ]
      * 创  建 : 2018/06/16 21:50
      */
-    public function rightApply($token,$name,$phone)
+    public function rightApply($token,$name,$phone,$formId)
     {
         // 引入RightDao层数据结构
         $applyInfo = new ApplyDao();
@@ -39,7 +40,7 @@ class ApplyService
         if($user['msg']=='success') return returnData('error');
 
         // 添加管理员申请数据库信息
-        $info = $applyInfo->applyCreate($token,$name,$phone);
+        $info = $applyInfo->applyCreate($token,$name,$phone,$formId);
         if($info['msg']=='error') return returnData('error');
 
         // 返回数据
