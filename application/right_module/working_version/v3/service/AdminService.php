@@ -9,6 +9,7 @@
  */
 namespace app\right_module\working_version\v3\service;
 use \think\Db;
+use app\right_module\working_version\v3\model\UserModel;
 use app\right_module\working_version\v3\dao\ApplyDao;
 use app\right_module\working_version\v3\dao\AdminDao;
 use app\right_module\working_version\v3\dao\UserDao;
@@ -41,11 +42,13 @@ class AdminService
             $admin = (new AdminDao)->adminCreate($data['data'],$roletArr);// 返回数据格式
             if($admin['msg']=='error') return returnData('error','审核失败');
 
+            // 获取用户openid
+            $user = UserModel::where('user_token',$token)->find();
             // 实例化发送模板消息类库
             $pushLibrary = new PushLibrary();
             // 处理模板消息数据
             $data = [
-                'touser'           => $data['data']['apply_token'],
+                'touser'           => $user['user_openid'],
                 'template_id'      => config('wx_config.wx_Push_Adopt'),
                 'page'             => '/pages/index/index',
                 'form_id'          => $data['data']['apply_formid'],
