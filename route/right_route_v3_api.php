@@ -53,7 +53,7 @@ Route::group('v3/right_module/', function(){
     /**
      * 传值方式：DELETE 路由功能：删除管理员申请操作
      */
-    Route::get(
+    Route::delete(
         'apply_delete/:token',
         'right_module/v3.controller.ApplyController/applyDel'
     );
