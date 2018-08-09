@@ -18,5 +18,5 @@ interface BusinessInterface
      * 输  出 : ['msg'=>'success','data'=>true]
      * 创  建 : 2018/08/09 15:56
      */
-    public function businessDataSel();
+    public function businessDataSel($get);
 }

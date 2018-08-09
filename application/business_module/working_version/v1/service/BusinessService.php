@@ -28,7 +28,12 @@ class BusinessService
         // 实例化数据处理类
         $businessDao = new BusinessDao();
         // 获取管理员店铺数据
-        $businessDao->businessDataSel();
-
+        $R = $businessDao->businessDataSel($get);
+        // 判断是否有返回值
+        if($R['msg']=='error') return returnData(
+            'error',$R['data']
+        );
+        // 返回正确数据
+        return returnData('success',$R['data']);
     }
 }
