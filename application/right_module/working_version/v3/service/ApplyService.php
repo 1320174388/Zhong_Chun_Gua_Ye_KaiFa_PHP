@@ -9,8 +9,10 @@
  */
 namespace app\right_module\working_version\v3\service;
 use \think\Db;
+use app\right_module\working_version\v3\model\UserModel;
 use app\right_module\working_version\v3\dao\ApplyDao;
 use app\right_module\working_version\v3\dao\AdminDao;
+use app\right_module\working_version\v3\library\PushLibrary;
 
 class ApplyService
 {
@@ -80,6 +82,29 @@ class ApplyService
         if($data['msg']=='error') return returnData(
             'error','此管理员申请不存在'
         );
+
+        // 获取用户openid
+        $user = UserModel::where(
+            'user_token',
+            $delete['applyToken']
+        )->find();
+        // 实例化发送模板消息类库
+        $pushLibrary = new PushLibrary();
+        // 处理模板消息数据
+        $data = [
+            'touser'           => $user['user_openid'],
+            'template_id'      => config('wx_config.wx_Push_Not_Through'),
+            'page'             => '/pages/index/index',
+            'form_id'          => $data['data']['apply_formid'],
+            'data'             => [
+                'keyword1'=>['value'=>'申请中春果业管理员'],
+                'keyword2'=>['value'=>$data['data']['apply_name']],
+                'keyword3'=>['value'=>'未通过'],
+                'keyword4'=>['value'=>date('Y-m-d H:i',time())]
+            ],
+        ];
+        // 发送模板消息
+        $pushLibrary->sendTemplate($data);
 
         // 执行管理员删除操作
         $res = (new ApplyDao)->applyDelete($delete['applyToken']);
