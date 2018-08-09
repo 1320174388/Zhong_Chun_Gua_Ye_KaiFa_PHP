@@ -8,6 +8,7 @@
  *  历史记录 :  -----------------------
  */
 namespace app\business_module\working_version\v3\dao;
+use app\business_module\working_version\v3\model\ShopModel;
 
 class BusinessDao implements BusinessInterface
 {
@@ -20,6 +21,17 @@ class BusinessDao implements BusinessInterface
      */
     public function businessDataSel($get)
     {
-
+        // 获取管理员店铺信息
+        $shop = ShopModel::where(
+            'user_token',
+            $get['adminToken']
+        )->find();
+        // 判断是否有店铺信息数据
+        if(!$shop) return returnData(
+            'error',
+            '没有店铺信息'
+        );
+        // 返回正确数据信息
+        return returnData('success',$shop);
     }
 }
