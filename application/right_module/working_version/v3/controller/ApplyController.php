@@ -64,4 +64,36 @@ class ApplyController extends Controller
         // 返回接口响应数据
         return returnResponse(0,'申请成功',$res['data']);
     }
+
+    /**
+     * 名  称 : applyDel()
+     * 功  能 : 执行管理员删除操作
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $delete['applytoken']  => '管理员申请标识';
+     * 输  出 : {"errNum":0,"retMsg":"删除成功","retData":true}
+     * 创  建 : 2018/08/08 09:31
+     */
+    public function applyDel(Request $request)
+    {
+        // 获取所有delete传值信息
+        $delete = $request->delete();
+
+        // 判断是否发生申请标识
+        if(empty($delete['applytoken'])) return returnResponse(
+            1,'请发送申请标识'
+        );
+
+        // 实例化逻辑层代码
+        $applyService = new ApplyService();
+
+        // 执行删除代码
+        $res = $applyService->applyDataDel($delete);
+
+        // 判断用户是否申请成功
+        if($res['msg']=='error')return returnResponse(2,$res['data']);
+
+        // 返回接口响应数据
+        return returnResponse(0,$res['data'],true);
+
+    }
 }
