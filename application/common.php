@@ -45,3 +45,26 @@ function returnResponse($number,$string,$retData = false)
         'retData' => $retData
     ],JSON_UNESCAPED_UNICODE );
 }
+
+/**
+ * 名  称 : uniqidToken()
+ * 功  能 : 生成当前时间微妙唯一Token标识字符串
+ * 变  量 : --------------------------------------
+ * 输  入 : --------------------------------------
+ * 输  出 : 单一功能函数，只返回token字符串
+ * 创  建 : 2018/08/09 18:33
+ */
+function uniqidToken()
+{
+    $str  = 'abcdefghijklmnopqrstuvwxyz';
+    $str .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $str .= '_123456789';
+
+    $newStr = '';
+    for( $i = 0; $i < 32; $i++) {
+        $newStr .= $str[mt_rand(0,strlen($str)-1)];
+    }
+    $newStr .= time().mt_rand(100000,999999);
+
+    return md5(uniqid().$newStr);
+}
