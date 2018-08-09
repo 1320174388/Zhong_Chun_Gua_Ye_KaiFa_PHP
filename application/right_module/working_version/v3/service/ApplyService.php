@@ -68,21 +68,21 @@ class ApplyService
     /**
      * 名  称 : applyDataDel()
      * 功  能 : 执行管理员删除操作
-     * 输  入 : string) $delete['applytoken']  => '管理员申请标识';
+     * 输  入 : string) $delete['applyToken']  => '管理员申请标识';
      * 输  出 : ['msg'=>'success','data'=>true ]
      * 创  建 : 2018/08/09 09:37
      */
     public function applyDataDel($delete)
     {
         // 获取管理员数据
-        $data = (new ApplyDao)->applySelect($delete['applytoken']);
+        $data = (new ApplyDao)->applySelect($delete['applyToken']);
         // 判断是否有数据
         if($data['msg']=='error') return returnData(
             'error','此管理员申请不存在'
         );
 
         // 执行管理员删除操作
-        $res = (new ApplyDao)->applyDelete($delete['applytoken']);
+        $res = (new ApplyDao)->applyDelete($delete['applyToken']);
         // 判断是否删除成功
         if($res['msg']=='error') return returnData(
             'error','删除失败'

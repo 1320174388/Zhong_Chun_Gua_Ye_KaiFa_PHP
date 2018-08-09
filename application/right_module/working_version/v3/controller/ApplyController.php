@@ -69,7 +69,7 @@ class ApplyController extends Controller
      * 名  称 : applyDel()
      * 功  能 : 执行管理员删除操作
      * 变  量 : --------------------------------------
-     * 输  入 : (string) $delete['applytoken']  => '管理员申请标识';
+     * 输  入 : (string) $delete['applyToken']  => '管理员申请标识';
      * 输  出 : {"errNum":0,"retMsg":"删除成功","retData":true}
      * 创  建 : 2018/08/08 09:31
      */
@@ -79,7 +79,7 @@ class ApplyController extends Controller
         $delete = $request->delete();
 
         // 判断是否发生申请标识
-        if(empty($delete['applytoken'])) return returnResponse(
+        if(empty($delete['applyToken'])) return returnResponse(
             1,'请发送申请标识'
         );
 
