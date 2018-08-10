@@ -29,7 +29,7 @@ Route::group('v1/business_module/', function(){
      */
     Route::get(
         'business_route/:token',
-        'business_route/v1.controller.BusinessController/businessIsData'
+        'business_module/v1.controller.BusinessController/businessIsData'
     );
 
 })->middleware('Right_v3_IsAdmin');
