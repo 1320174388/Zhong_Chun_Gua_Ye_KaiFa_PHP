@@ -45,6 +45,7 @@ class BusinessController extends Controller
      * 输  入 : (string) $post['shopName']   => '店铺名称';
      * 输  入 : (string) $post['shopMaster'] => '店铺名称';
      * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  入 : (string) $post['shopFormid'] => 'FormID';
      * 输  出 : {"errNum":0,"retMsg":"创建成功","retData":true}
      * 创  建 : 2018/08/10 11:01
      */

@@ -27,6 +27,7 @@ interface BusinessInterface
      * 输  入 : (string) $post['shopName']   => '店铺名称';
      * 输  入 : (string) $post['shopMaster'] => '店铺名称';
      * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  入 : (string) $post['shopFormid'] => 'FormID';
      * 输  出 : ['msg'=>'success','data'=>true]
      * 创  建 : 2018/08/10 14:28
      */

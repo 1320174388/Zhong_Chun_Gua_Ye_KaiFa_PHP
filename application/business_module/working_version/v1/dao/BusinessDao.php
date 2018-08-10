@@ -9,6 +9,8 @@
  */
 namespace app\business_module\working_version\v1\dao;
 use app\business_module\working_version\v1\model\ShopModel;
+use app\right_module\working_version\v3\model\UserModel;
+use app\right_module\working_version\v3\library\PushLibrary;
 
 class BusinessDao implements BusinessInterface
 {
@@ -42,6 +44,7 @@ class BusinessDao implements BusinessInterface
      * 输  入 : (string) $post['shopName']   => '店铺名称';
      * 输  入 : (string) $post['shopMaster'] => '店主名称';
      * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  入 : (string) $post['shopFormid'] => 'FormID';
      * 输  出 : ['msg'=>'success','data'=>true]
      * 创  建 : 2018/08/10 14:28
      */
@@ -74,6 +77,32 @@ class BusinessDao implements BusinessInterface
             'error',
             '没有店铺信息'
         );
+
+        // 获取用户openid
+        $user = UserModel::where(
+            'user_token',
+            $post['adminToken']
+        )->find();
+
+        // 实例化发送模板消息类库
+        $pushLibrary = new PushLibrary();
+        // 处理模板消息数据
+        $data = [
+            'touser'           => $user['user_openid'],
+            'template_id'      => config('wx_config.wx_Push_Content'),
+            'page'             => '/pages/index/index',
+            'form_id'          => $post['shopFormid'],
+            'data'             => [
+                'keyword1'=>['value'=>'申请中春果业管理员'],
+                'keyword2'=>['value'=>$data['data']['apply_name']],
+                'keyword3'=>['value'=>$data['data']['apply_phone']],
+                'keyword4'=>['value'=>'已通过'],
+                'keyword5'=>['value'=>date('Y-m-d H:i',time())],
+            ],
+        ];
+        // 发送模板消息
+        $pushLibrary->sendTemplate($data);
+
         // 返回正确数据信息
         return returnData('success','创建成功');
     }

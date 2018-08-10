@@ -19,13 +19,15 @@ class BusinessValidate extends Validate
      * 输  入 : (string) $post['shopName']   => '店铺名称';
      * 输  入 : (string) $post['shopMaster'] => '店铺名称';
      * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  入 : (string) $post['shopFormid'] => 'FormID';
      * 创  建 : 2018/08/10 11:12
      */
     protected $rule = [
         'adminToken'  => 'require|min:32|max:32',
         'shopName'    => 'require|min:2|max:20',
         'shopMaster'  => 'require|min:2|max:20',
-        'shopPhone'   => 'require|min:11|max:11',
+        'shopPhone'   => 'require|min:11|max:11|number',
+        'shopFormid'  => 'require|number',
     ];
     /**
      * 名  称 : $message => '静态属性'
@@ -45,5 +47,8 @@ class BusinessValidate extends Validate
         'shopPhone.require'  => '请正确输入联系电话',
         'shopPhone.min'      => '请正确输入联系电话',
         'shopPhone.max'      => '请正确输入联系电话',
+        'shopPhone.number'   => '请正确输入联系电话',
+        'shopFormid.require' => '请正确发送FormID',
+        'shopFormid.number'  => '请正确发送FormID',
     ];
 }
