@@ -7,7 +7,7 @@
  *  文件描述 :  商户店铺管理数据接口声明
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v3\dao;
+namespace app\business_module\working_version\v1\dao;
 
 interface BusinessInterface
 {

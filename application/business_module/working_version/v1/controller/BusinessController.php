@@ -10,7 +10,7 @@
 namespace app\business_module\working_version\v1\controller;
 use think\Controller;
 use think\Request;
-use app\business_module\working_version\v3\service\BusinessService;
+use app\business_module\working_version\v1\service\BusinessService;
 
 class BusinessController extends Controller
 {

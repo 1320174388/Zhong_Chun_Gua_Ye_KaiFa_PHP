@@ -7,8 +7,8 @@
  *  文件描述 :  商户店铺管理逻辑处理
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v3\service;
-use app\business_module\working_version\v3\dao\BusinessDao;
+namespace app\business_module\working_version\v1\service;
+use app\business_module\working_version\v1\dao\BusinessDao;
 
 class BusinessService
 {

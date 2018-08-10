@@ -7,7 +7,7 @@
  *  文件描述 :  管理员表数据模型
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v3\model;
+namespace app\business_module\working_version\v1\model;
 use think\Model;
 
 class ShopModel extends Model

@@ -7,8 +7,8 @@
  *  文件描述 :  商户店铺管理数据接口声明
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v3\dao;
-use app\business_module\working_version\v3\model\ShopModel;
+namespace app\business_module\working_version\v1\dao;
+use app\business_module\working_version\v1\model\ShopModel;
 
 class BusinessDao implements BusinessInterface
 {
