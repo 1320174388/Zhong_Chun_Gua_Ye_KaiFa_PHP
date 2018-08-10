@@ -47,6 +47,17 @@ class BusinessDao implements BusinessInterface
      */
     public function businessCreate($post)
     {
+        // 获取管理员店铺信息
+        $shop = ShopModel::where(
+            'user_token',
+            $post['adminToken']
+        )->find();
+        // 判断是否有店铺信息数据
+        if($shop) return returnData(
+            'error',
+            '已有店铺不可创建'
+        );
+
         // 实例化店铺模型
         $shopModel = new ShopModel();
 
