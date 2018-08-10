@@ -95,7 +95,7 @@ class BusinessDao implements BusinessInterface
             'data'             => [
                 'keyword1'=>['value'=>'创建中春果业店铺'],
                 'keyword2'=>['value'=>$post['shopName']],
-                'keyword3'=>['value'=>$post['shopMaster'],
+                'keyword3'=>['value'=>$post['shopMaster']],
                 'keyword4'=>['value'=>date('Y-m-d H:i',time())],
             ],
         ];
