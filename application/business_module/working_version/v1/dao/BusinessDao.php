@@ -93,11 +93,10 @@ class BusinessDao implements BusinessInterface
             'page'             => '/pages/index/index',
             'form_id'          => $post['shopFormid'],
             'data'             => [
-                'keyword1'=>['value'=>'申请中春果业管理员'],
-                'keyword2'=>['value'=>$data['data']['apply_name']],
-                'keyword3'=>['value'=>$data['data']['apply_phone']],
-                'keyword4'=>['value'=>'已通过'],
-                'keyword5'=>['value'=>date('Y-m-d H:i',time())],
+                'keyword1'=>['value'=>'创建中春果业店铺'],
+                'keyword2'=>['value'=>$post['shopName']],
+                'keyword3'=>['value'=>$post['shopMaster'],
+                'keyword4'=>['value'=>date('Y-m-d H:i',time())],
             ],
         ];
         // 发送模板消息
