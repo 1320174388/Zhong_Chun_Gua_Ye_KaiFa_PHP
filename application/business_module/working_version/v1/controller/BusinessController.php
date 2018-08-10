@@ -19,7 +19,7 @@ class BusinessController extends Controller
      * 功  能 : 判断管理员是否有店铺信息，获取店铺信息数据
      * 变  量 : --------------------------------------
      * 输  入 : (string) $get['adminToken'] => '管理员身份标识';
-     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":true}
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":"数据"}
      * 创  建 : 2018/08/09 15:07
      */
     public function businessIsData(Request $request)
@@ -35,5 +35,30 @@ class BusinessController extends Controller
         // 返回正确数据
         return returnResponse(0,'请求成功',$R['data']);
 
+    }
+
+    /**
+     * 名  称 : businessPost()
+     * 功  能 : 执行管理员创建个人店铺操作接口
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $post['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $post['shopName']   => '店铺名称';
+     * 输  入 : (string) $post['shopMaster'] => '店铺名称';
+     * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  出 : {"errNum":0,"retMsg":"创建成功","retData":true}
+     * 创  建 : 2018/08/10 11:01
+     */
+    public function businessPost(Request $request)
+    {
+        // 实例化逻辑层代码
+        $businessService = new BusinessService();
+        // 执行判断管理员是否有店铺操作
+        $R = $businessService->businessAdd($request->post());
+        // 验证返回数据
+        if($R['msg']=='error') return returnResponse(
+            1,$R['data']
+        );
+        // 返回正确数据
+        return returnResponse(0,$R['data'],true);
     }
 }

@@ -19,4 +19,16 @@ interface BusinessInterface
      * 创  建 : 2018/08/09 15:56
      */
     public function businessDataSel($get);
+
+    /**
+     * 名  称 : businessCreate()
+     * 功  能 : 创建管理员店铺信息
+     * 输  入 : (string) $post['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $post['shopName']   => '店铺名称';
+     * 输  入 : (string) $post['shopMaster'] => '店铺名称';
+     * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/10 14:28
+     */
+    public function businessCreate($post);
 }

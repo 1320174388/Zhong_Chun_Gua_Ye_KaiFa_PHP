@@ -34,4 +34,35 @@ class BusinessDao implements BusinessInterface
         // 返回正确数据信息
         return returnData('success',$shop);
     }
+
+    /**
+     * 名  称 : businessCreate()
+     * 功  能 : 创建管理员店铺信息
+     * 输  入 : (string) $post['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $post['shopName']   => '店铺名称';
+     * 输  入 : (string) $post['shopMaster'] => '店主名称';
+     * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/10 14:28
+     */
+    public function businessCreate($post)
+    {
+        // 实例化店铺模型
+        $shopModel = new ShopModel();
+
+        // 处理店铺数据信息
+        $shopModel->user_token  = $post['adminToken'];
+        $shopModel->shop_name   = $post['shopName'];
+        $shopModel->shop_master = $post['shopMaster'];
+        $shopModel->shop_phone  = $post['shopPhone'];
+        $shopModel->shop_sttus  = 1;
+
+        // 判断是否有店铺信息数据
+        if(!$shopModel->save()) return returnData(
+            'error',
+            '没有店铺信息'
+        );
+        // 返回正确数据信息
+        return returnData('success','创建成功');
+    }
 }
