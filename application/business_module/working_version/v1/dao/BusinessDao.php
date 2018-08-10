@@ -142,7 +142,7 @@ class BusinessDao implements BusinessInterface
         // 获取用户openid
         $user = UserModel::where(
             'user_token',
-            $put['adminToken']
+            $shop['user_token']
         )->find();
 
         // 实例化发送模板消息类库
@@ -164,6 +164,6 @@ class BusinessDao implements BusinessInterface
 
         // 返回正确数据信息
         return returnData('success','修改成功');
-        
+
     }
 }
