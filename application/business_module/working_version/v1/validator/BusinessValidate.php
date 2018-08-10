@@ -7,7 +7,7 @@
  *  文件描述 :  商户创建店铺验证器
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v1\service;
+namespace app\business_module\working_version\v1\validator;
 use think\Validate;
 
 class BusinessValidate extends Validate

@@ -9,7 +9,7 @@
  */
 namespace app\business_module\working_version\v1\service;
 use app\business_module\working_version\v1\dao\BusinessDao;
-use app\business_module\working_version\v1\service\BusinessValidate;
+use app\business_module\working_version\v1\validator\BusinessValidate;
 
 class BusinessService
 {
