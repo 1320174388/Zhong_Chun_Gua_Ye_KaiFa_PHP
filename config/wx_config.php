@@ -23,5 +23,7 @@ return [
     // 审核未通过提醒 模板ID
     'wx_Push_Not_Through'  => '1paxJaT24_3zjLMKxnxeN2TG5MhzuqhZX9ibC-1xep4',
     // 内容创建成功通知 模板ID
-    'wx_Push_Content' => '-AGO678U-g2bBf_qHq5uY3sZ2yqTULKvILUrfPPHFog'
+    'wx_Push_Content' => '-AGO678U-g2bBf_qHq5uY3sZ2yqTULKvILUrfPPHFog',
+    // 内容修改通知 模板ID
+    'wx_Push_Put_Content' => 'pU5ulLz_LvwGgOGC3M5RgiGJu9GxA6KK4qMOxkFCrMk'
 ];

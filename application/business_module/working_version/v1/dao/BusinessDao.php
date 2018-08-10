@@ -150,14 +150,13 @@ class BusinessDao implements BusinessInterface
         // 处理模板消息数据
         $data = [
             'touser'           => $user['user_openid'],
-            'template_id'      => config('wx_config.wx_Push_Content'),
+            'template_id'      => config('wx_config.wx_Push_Put_Content'),
             'page'             => '/pages/index/index',
             'form_id'          => $put['shopFormid'],
             'data'             => [
                 'keyword1'=>['value'=>'修改中春果业店铺信息'],
-                'keyword2'=>['value'=>$put['shopName']],
-                'keyword3'=>['value'=>$put['shopMaster']],
-                'keyword4'=>['value'=>date('Y-m-d H:i',time())],
+                'keyword2'=>['value'=>'店铺名称修改为：'.$put['shopName']],
+                'keyword3'=>['value'=>date('Y-m-d H:i',time())],
             ],
         ];
         // 发送模板消息
@@ -165,7 +164,6 @@ class BusinessDao implements BusinessInterface
 
         // 返回正确数据信息
         return returnData('success','修改成功');
-
-
+        
     }
 }
