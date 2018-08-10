@@ -16,7 +16,7 @@ class BusinessController extends Controller
 {
     /**
      * 名  称 : businessIsData()
-     * 功  能 : 判断管理员是否有店铺
+     * 功  能 : 判断管理员是否有店铺信息，获取店铺信息数据
      * 变  量 : --------------------------------------
      * 输  入 : (string) $get['adminToken'] => '管理员身份标识';
      * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":true}
