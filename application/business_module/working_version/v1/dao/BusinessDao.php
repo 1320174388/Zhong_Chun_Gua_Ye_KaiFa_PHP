@@ -55,7 +55,8 @@ class BusinessDao implements BusinessInterface
         $shopModel->shop_name   = $post['shopName'];
         $shopModel->shop_master = $post['shopMaster'];
         $shopModel->shop_phone  = $post['shopPhone'];
-        $shopModel->shop_sttus  = 1;
+        $shopModel->shop_time   = time();
+        $shopModel->shop_status = 1;
 
         // 判断是否有店铺信息数据
         if(!$shopModel->save()) return returnData(
