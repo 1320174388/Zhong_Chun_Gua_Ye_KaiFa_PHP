@@ -69,4 +69,42 @@ class BusinessService
         // 返回正确数据
         return returnData('success',$R['data']);
     }
+
+    /**
+     * 名  称 : businessEdit()
+     * 功  能 : 执行管理员修改个人店铺操作
+     * 输  入 : (string) $put['shopId']     => '店铺标识';
+     * 输  入 : (string) $put['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $put['shopName']   => '店铺名称';
+     * 输  入 : (string) $put['shopMaster'] => '店铺名称';
+     * 输  入 : (string) $put['shopPhone']  => '联系电话';
+     * 输  入 : (string) $put['shopFormid'] => 'FormID';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/10 16:14
+     */
+    public function businessEdit($put)
+    {
+        // 实例化验证器，验证数据是否正确
+        $validate = new BusinessValidate();
+        // 判断数据是否正确,返回错误数据
+        if(!$validate->check($put))
+        {
+            return returnData('error',$validate->getError());
+        }
+        // 判断主键是否存在
+        if(empty($put['shopId'])) return returnData(
+            'error',
+            '请发送店铺标识'
+        );
+        // 实例化数据处理类
+        $businessDao = new BusinessDao();
+        // 获取管理员店铺数据
+        $R = $businessDao->businessUpdate($put);
+        // 判断是否有返回值
+        if($R['msg']=='error') return returnData(
+            'error',$R['data']
+        );
+        // 返回正确数据
+        return returnData('success',$R['data']);
+    }
 }

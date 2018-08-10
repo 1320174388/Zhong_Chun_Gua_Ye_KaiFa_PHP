@@ -31,13 +31,19 @@ Route::group('v1/business_module/', function(){
         'business_route/:token',
         'business_module/v1.controller.BusinessController/businessIsData'
     );
-
     /**
      * 传值方式：POST 路由功能：管理员创建店铺接口
      */
     Route::post(
         'business_route/:token',
         'business_module/v1.controller.BusinessController/businessPost'
+    );
+    /**
+     * 传值方式：PUT 路由功能：管理员修改店铺接口
+     */
+    Route::put(
+        'business_route/:token',
+        'business_module/v1.controller.BusinessController/businessPut'
     );
 
 })->middleware('Right_v3_IsAdmin');
