@@ -24,7 +24,7 @@ class BusinessValidate extends Validate
     protected $rule = [
         'adminToken'  => 'require|min:32|max:32',
         'shopName'    => 'require|min:2|max:20',
-        'shopMaster'  => 'require|min:2||max:20',
+        'shopMaster'  => 'require|min:2|max:20',
         'shopPhone'   => 'require|min:11|max:11',
     ];
     /**
