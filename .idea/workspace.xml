@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5f40da6-2e1d-4189-9fc7-002153ba0046" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/platform_module/config/v1_tableName.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/model/StoreModel.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/dao/StoreDao.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/dao/StoreDao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/route/platform_route_v3_api.php" afterPath="$PROJECT_DIR$/route/platform_route_v3_api.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,8 +90,8 @@
       <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="308">
+              <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
               <folding>
                 <element signature="e#6#180#0#PHP" expanded="true" />
                 <element signature="e#243#307#0#PHP" expanded="true" />
@@ -157,8 +152,8 @@
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/model/StoreModel.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/dao/StoreDao.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" />
-        <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" />
         <option value="$PROJECT_DIR$/route/platform_route_v3_api.php" />
+        <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" />
       </list>
     </option>
   </component>
@@ -602,12 +597,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533812764049</updated>
       <workItem from="1533812766198" duration="1491000" />
-      <workItem from="1533867107389" duration="19222000" />
+      <workItem from="1533867107389" duration="20388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20713000" />
+    <option name="totallyTimeSpent" value="21879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
@@ -863,8 +858,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="308">
+          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
           <folding>
             <element signature="e#6#180#0#PHP" expanded="true" />
             <element signature="e#243#307#0#PHP" expanded="true" />

@@ -35,4 +35,11 @@ class StoreController extends Controller
             return returnResponse(1,'设置失败',$result['data']);
         }
     }
+    /**
+     * 名    称：getVendor()
+     * 功    能：获取商家信息
+     * 输    入：(string)  $shop_id        =>  `店铺标识`
+     * 输    出：{"errNum":0,"retMsg":"设置成功","retData":true
+     * 输    出: {"errNum":1,"retMsg":"设置失败","retData":"提示信息"
+     */
 }
