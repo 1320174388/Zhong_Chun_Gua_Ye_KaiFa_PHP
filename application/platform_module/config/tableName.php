@@ -9,5 +9,6 @@
  */
 return [
     //分类表名
-    'AppleClass'    =>  'data_apple_class'
+    'AppleClass'    =>  'data_apple_class',
+    'ShopApples'    =>  'data_shop_apples'
 ];

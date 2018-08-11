@@ -47,3 +47,27 @@ route::get(
     'v1/platform_module/setState',
     'platform_module/v1.controller.StoreController/setState'
 );
+// +----------------------------------------------------------------------
+// | 功能：查询商家信息
+// | 类型：GET
+// +----------------------------------------------------------------------
+route::get(
+    'v1/platform_module/getVendor',
+    'platform_module/v1.controller.StoreController/getVendor'
+);
+// +----------------------------------------------------------------------
+// | 功能：获取店铺商品信息
+// | 类型：GET
+// +----------------------------------------------------------------------
+route::get(
+    'v1/platform_module/getGoodsList',
+    'platform_module/v1.controller.StoreController/getGoodsList'
+);
+// +----------------------------------------------------------------------
+// | 功能：删除店铺商品信息
+// | 类型：GET
+// +----------------------------------------------------------------------
+route::get(
+    'v1/platform_module/delectGoods',
+    'platform_module/v1.controller.StoreController/delectGoods'
+);
