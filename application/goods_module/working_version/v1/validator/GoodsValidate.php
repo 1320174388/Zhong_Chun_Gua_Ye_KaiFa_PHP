@@ -34,9 +34,9 @@ class GoodsValidate extends Validate
      * 创  建 : 2018/08/11 11:11
      */
     protected $message  =   [
-        'classIndex.require' => '请正确输入管理员标识',
-        'classIndex.min'     => '请正确输入管理员标识',
-        'classIndex.max'     => '请正确输入管理员标识',
+        'classIndex.require' => '请正确输入分类标识',
+        'classIndex.min'     => '请正确输入分类标识',
+        'classIndex.max'     => '请正确输入分类标识',
         'goodsStock.require' => '请正确输入商品库存',
         'goodsStock.number'  => '请正确输入商品库存',
         'goodsSales.require' => '请正确输入商品销量',
