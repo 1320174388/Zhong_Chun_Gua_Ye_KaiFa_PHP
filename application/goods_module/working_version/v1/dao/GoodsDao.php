@@ -28,6 +28,7 @@ class GoodsDao implements GoodsIntreface
         // 实例化数据库模型
         $goodsModel = new GoodsModel();
         // 处理数据
+        $goodsModel->apple_index  = uniqidToken();
         $goodsModel->apple_image  = $post['goodsFile'];
         $goodsModel->class_index  = $post['classIndex'];
         $goodsModel->apple_stock  = $post['goodsStock'];
