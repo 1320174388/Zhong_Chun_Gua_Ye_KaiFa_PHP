@@ -29,7 +29,7 @@ class GoodsService
         // 实例化数据验证器
         $goodsValidate = new GoodsValidate();
         // 返回错误信息
-        if($goodsValidate->check($post))
+        if(!$goodsValidate->check($post))
             return returnData(
             'error',
             $goodsValidate->getError()
