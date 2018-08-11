@@ -25,11 +25,11 @@ Route::group('v1/goods_module/', function(){
     // ---- 商品管理 ----
 
     /**
-     * 传值方式：GET 路由功能：判断管理员是否有店铺信息，获取店铺信息数据
+     * 传值方式：POST 路由功能：执行添加商品操作
      */
-    Route::get(
-        'goods_module/:token',
-        'business_module/v1.controller.BusinessController/businessIsData'
+    Route::post(
+        'goods_route/:token',
+        'goods_module/v1.controller.GoodsController/goodsPost'
     );
 
 })->middleware('Right_v3_IsAdmin');
