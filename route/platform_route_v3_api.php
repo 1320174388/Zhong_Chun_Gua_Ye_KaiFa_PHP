@@ -11,3 +11,7 @@ route::post(
     'v1/platform_module/addClass',
     'platform_module/v1.controller.IndexController/addClass'
 );
+route::get(
+    'v1/platform_module/getClass',
+    'platform_module/v1.controller.IndexController/getClass'
+);

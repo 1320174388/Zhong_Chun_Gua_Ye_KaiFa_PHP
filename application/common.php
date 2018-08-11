@@ -43,7 +43,7 @@ function returnResponse($number,$string,$retData = false)
         'errNum'  => $number,
         'retMsg'  => $string,
         'retData' => $retData
-    ],JSON_UNESCAPED_UNICODE );
+    ], 320);
 }
 
 /**
