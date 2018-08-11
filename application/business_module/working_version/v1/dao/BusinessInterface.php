@@ -7,7 +7,7 @@
  *  文件描述 :  商户店铺管理数据接口声明
  *  历史记录 :  -----------------------
  */
-namespace app\business_module\working_version\v3\dao;
+namespace app\business_module\working_version\v1\dao;
 
 interface BusinessInterface
 {
@@ -19,4 +19,31 @@ interface BusinessInterface
      * 创  建 : 2018/08/09 15:56
      */
     public function businessDataSel($get);
+
+    /**
+     * 名  称 : businessCreate()
+     * 功  能 : 创建管理员店铺信息
+     * 输  入 : (string) $post['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $post['shopName']   => '店铺名称';
+     * 输  入 : (string) $post['shopMaster'] => '店铺名称';
+     * 输  入 : (string) $post['shopPhone']  => '联系电话';
+     * 输  入 : (string) $post['shopFormid'] => 'FormID';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/10 14:28
+     */
+    public function businessCreate($post);
+
+    /**
+     * 名  称 : businessUpdate()
+     * 功  能 : 修改管理员店铺信息
+     * 输  入 : (string) $put['shopId']     => '店铺标识';
+     * 输  入 : (string) $put['adminToken'] => '管理员身份标识';
+     * 输  入 : (string) $put['shopName']   => '店铺名称';
+     * 输  入 : (string) $put['shopMaster'] => '店铺名称';
+     * 输  入 : (string) $put['shopPhone']  => '联系电话';
+     * 输  入 : (string) $put['shopFormid'] => 'FormID';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/10 16::15
+     */
+    public function businessUpdate($put);
 }
