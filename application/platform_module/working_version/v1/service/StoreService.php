@@ -8,6 +8,8 @@
  *  历史记录 :  -----------------------
  */
 namespace app\platform_module\working_version\v1\service;
+use app\platform_module\working_version\v1\dao\StoreDao;
+use think\Validate;
 
 class StoreService
 {
@@ -18,14 +20,30 @@ class StoreService
      * 输    出：{"errNum":0,"retMsg":"设置成功","retData":true
      * 输    出: {"errNum":1,"retMsg":"设置失败","retData":$data
      */
-    public function setStateService()
+    public function setStateService($data)
     {
-        //TODO  验证数据
-
-        //TODO  返回数据错误
-
-        //TODO  传入数据 执行数据操作
-
-        //TODO  返回结果
+        //  验证数据
+       $validate = new Validate([
+           'shop_id'        =>  'require',
+           'shop_status'    =>  'require'
+       ],[
+            'shop_id.require'       =>  '店铺标识shop_id不能为空',
+            'shop_status.require'   =>  '状态碼shop_status不能为空'
+       ]);
+        //  返回数据错误
+        if (!$validate->check($data))
+        {
+           return returnData('error',$validate->getError());
+        }
+        //  传入数据 执行数据操作
+        $result = (new StoreDao())->modifyState($data);
+        //  返回结果
+        if ($result['msg'] == 'success')
+        {
+            return returnData('success',$result['data']);
+        }else
+        {
+            return returnData('error',$result['data']);
+        }
     }
 }

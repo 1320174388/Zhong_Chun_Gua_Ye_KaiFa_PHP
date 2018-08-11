@@ -9,6 +9,7 @@
  */
 namespace app\platform_module\working_version\v1\controller;
 
+use app\platform_module\working_version\v1\service\StoreService;
 use think\Controller;
 
 class StoreController extends Controller
@@ -23,8 +24,15 @@ class StoreController extends Controller
      */
     public function setState()
     {
-        //TODO  传入数据 执行操作
-
-        //TODO  返回结果
+        //  传入数据 执行操作
+        $result = (new StoreService())->setStateService($_GET);
+        //  返回结果
+        if ($result['msg'] == 'success')
+        {
+            return returnResponse(0,'设置成功',true);
+        }else
+        {
+            return returnResponse(1,'设置失败',$result['data']);
+        }
     }
 }
