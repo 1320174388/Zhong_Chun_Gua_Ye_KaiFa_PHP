@@ -54,7 +54,7 @@ class GoodsService
         // 写入数据
         $goodsSave = $goodsDao->goodsAdd($post);
         // 判断是否保存成功
-        if(!$goodsSave) return returnData(
+        if(!$goodsSave['msg']='error') return returnData(
             'error',
             $goodsSave['data']
         );
