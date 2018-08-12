@@ -34,4 +34,19 @@ interface GoodsIntreface
      * 创  建 : 2018/08 12 19:44
      */
     public function goodsAll($get);
+
+    /**
+     * 名  称 : goodsEdits()
+     * 功  能 : 修改商品信息数据
+     * 输  入 : (string) $put['goodsIndex'] => '商品标识';
+     * 输  入 : (string) $put['shopId']     => '店铺ID';
+     * 输  入 : (string) $put['goodsFile']  => '商品图片资源';
+     * 输  入 : (string) $put['classIndex'] => '商品分类标识';
+     * 输  入 : (string) $put['goodsStock'] => '商品库存';
+     * 输  入 : (string) $put['goodsSales'] => '商品销量';
+     * 输  入 : (string) $put['goodsPrice'] => '商品价格';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/13 00:34
+     */
+    public function goodsEdits($put);
 }

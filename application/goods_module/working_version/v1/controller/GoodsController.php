@@ -69,13 +69,13 @@ class GoodsController extends Controller
      * 名  称 : goodsPut()
      * 功  能 : 执行修改商品操作
      * 变  量 : --------------------------------------
-     * 输  入 : (string) $put['goodsIndex'] => '商品标识';
-     * 输  入 : (string) $put['shopId']     => '店铺ID';
-     * 输  入 : (string) $put['goodsFile']  => '商品图片资源';
-     * 输  入 : (string) $put['classIndex'] => '商品分类标识';
-     * 输  入 : (string) $put['goodsStock'] => '商品库存';
-     * 输  入 : (string) $put['goodsSales'] => '商品销量';
-     * 输  入 : (string) $put['goodsPrice'] => '商品价格';
+     * 输  入 : (string) $post['goodsIndex'] => '商品标识';
+     * 输  入 : (string) $post['shopId']     => '店铺ID';
+     * 输  入 : (string) $post['goodsFile']  => '商品图片资源';
+     * 输  入 : (string) $post['classIndex'] => '商品分类标识';
+     * 输  入 : (string) $post['goodsStock'] => '商品库存';
+     * 输  入 : (string) $post['goodsSales'] => '商品销量';
+     * 输  入 : (string) $post['goodsPrice'] => '商品价格';
      * 输  出 : {"errNum":0,"retMsg":"修改成功","retData":trun}
      * 创  建 : 2018/08/11 10:55
      */
@@ -84,7 +84,7 @@ class GoodsController extends Controller
         // 实例化逻辑层代码
         $goodsService = new GoodsService();
         // 执行修改商品接口
-        $R = $goodsService->goodsList($request->put());
+        $R = $goodsService->goodsEdit($request->post());
         // 验证返回数据
         if($R['msg']=='error') return returnResponse(
             1,$R['data']

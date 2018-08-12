@@ -39,10 +39,10 @@ Route::group('v1/goods_module/', function(){
         'goods_module/v1.controller.GoodsController/goodsGet'
     );
     /**
-     * 传值方式：PUT 路由功能：执行修改商品操作
+     * 传值方式：POST 路由功能：执行修改商品操作
      */
     Route::post(
-        'goods_route/:token',
+        'goods_post/:token',
         'goods_module/v1.controller.GoodsController/goodsPut'
     );
 
