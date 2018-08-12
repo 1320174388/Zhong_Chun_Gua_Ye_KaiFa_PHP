@@ -15,6 +15,7 @@ class GoodsValidate extends Validate
     /**
      * 名  称 : $rule => '静态属性'
      * 功  能 : 定义验证规则
+     * 输  入 : (string) $post['shopId']     => '店铺ID';
      * 输  入 : (string) $post['goodsFile']  => '商品图片资源';
      * 输  入 : (string) $post['classIndex'] => '商品分类标识';
      * 输  入 : (string) $post['goodsStock'] => '商品库存';
@@ -23,6 +24,7 @@ class GoodsValidate extends Validate
      * 创  建 : 2018/08/11 11:11
      */
     protected $rule = [
+        'shopId'      => 'require|number',
         'classIndex'  => 'require|min:32|max:32',
         'goodsStock'  => 'require|number',
         'goodsSales'  => 'require|number',
@@ -34,6 +36,8 @@ class GoodsValidate extends Validate
      * 创  建 : 2018/08/11 11:11
      */
     protected $message  =   [
+        'shopId.require'     => '请正确发送店铺ID',
+        'shopId.number'      => '请正确发送店铺ID',
         'classIndex.require' => '请正确输入分类标识',
         'classIndex.min'     => '请正确输入分类标识',
         'classIndex.max'     => '请正确输入分类标识',

@@ -18,6 +18,7 @@ class GoodsController extends Controller
      * 名  称 : goodsPost()
      * 功  能 : 执行添加商品操作
      * 变  量 : --------------------------------------
+     * 输  入 : (string) $post['shopId']     => '店铺ID';
      * 输  入 : (string) $post['goodsFile']  => '商品图片资源';
      * 输  入 : (string) $post['classIndex'] => '商品分类标识';
      * 输  入 : (string) $post['goodsStock'] => '商品库存';
@@ -45,7 +46,8 @@ class GoodsController extends Controller
      * 名  称 : goodsGet()
      * 功  能 : 获取商品列表数据信息
      * 变  量 : --------------------------------------
-     * 输  入 : (string) $get['shopId'] => '店铺ID';
+     * 输  入 : (string) $get['shopId']   => '店铺ID';
+     * 输  入 : (string) $get['goodsNum'] => '以获取的商品数量';
      * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":"数据"}
      * 创  建 : 2018/08 12 19:44
      */

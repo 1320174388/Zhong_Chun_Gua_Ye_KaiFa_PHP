@@ -16,6 +16,7 @@ class GoodsService
     /**
      * 名  称 : goodsAdd()
      * 功  能 : 执行添加商品信息逻辑
+     * 输  入 : (string) $post['shopId']     => '店铺ID';
      * 输  入 : (string) $post['goodsFile']  => '商品图片资源';
      * 输  入 : (string) $post['classIndex'] => '商品分类标识';
      * 输  入 : (string) $post['goodsStock'] => '商品库存';
@@ -65,7 +66,8 @@ class GoodsService
     /**
      * 名  称 : goodsList()
      * 功  能 : 获取商品列表数据信息
-     * 输  入 : (string) $get['shopId'] => '店铺ID';
+     * 输  入 : (string) $get['shopId']   => '店铺ID';
+     * 输  入 : (string) $get['goodsNum'] => '以获取的商品数量';
      * 输  出 : ['msg'=>'success','data'=>"商品列表数据"]
      * 创  建 : 2018/08 12 19:44
      */
@@ -76,6 +78,10 @@ class GoodsService
             'error',
             '请发送店铺ID'
         );
+        // 验证店铺ID是否上传
+        if(empty($get['goodsNum'])){
+            $get['goodsNum'] = 0;
+        }
         // 实例化数据层代码
         $goodsDao = new GoodsDao();
         // 获取数据

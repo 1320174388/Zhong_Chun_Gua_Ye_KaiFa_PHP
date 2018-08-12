@@ -15,6 +15,7 @@ class GoodsDao implements GoodsIntreface
     /**
      * 名  称 : goodsAdd()
      * 功  能 : 添加商品信息数据
+     * 输  入 : (string) $post['shopId']     => '店铺ID';
      * 输  入 : (string) $post['goodsFile']  => '商品图片资源';
      * 输  入 : (string) $post['classIndex'] => '商品分类标识';
      * 输  入 : (string) $post['goodsStock'] => '商品库存';
@@ -29,6 +30,7 @@ class GoodsDao implements GoodsIntreface
         $goodsModel = new GoodsModel();
         // 处理数据
         $goodsModel->apple_index  = uniqidToken();
+        $goodsModel->shop_id      = $post['shopId'];
         $goodsModel->apple_image  = $post['goodsFile'];
         $goodsModel->class_index  = $post['classIndex'];
         $goodsModel->apple_stock  = $post['goodsStock'];
@@ -44,5 +46,31 @@ class GoodsDao implements GoodsIntreface
         );
         // 返回正确数据
         return returnData('success','添加成功');
+    }
+
+    /**
+     * 名  称 : goodsAll()
+     * 功  能 : 获取商品列表数据信息
+     * 输  入 : (string) $get['shopId']   => '店铺ID';
+     * 输  入 : (string) $get['goodsNum'] => '以获取的商品数量';
+     * 输  出 : ['msg'=>'success','data'=>"商品列表数据"]
+     * 创  建 : 2018/08 12 19:44
+     */
+    public function goodsAll($get)
+    {
+        // 获取商品列表数据
+        $goodlist = GoodsModel::where(
+            'shop_id',
+            $get['shopId']
+        )->limit(
+            $get['goodsNum'],12
+        )->select()->toArray();
+        // 判断店铺是否有商品
+        if(!$goodlist) return returnData(
+            'error',
+            '当前还没有商品，请添加商品'
+        );
+        // 返回正确商品列表数据
+        return returnData('success',$goodlist);
     }
 }
