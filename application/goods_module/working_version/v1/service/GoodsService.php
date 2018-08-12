@@ -10,6 +10,7 @@
 namespace app\goods_module\working_version\v1\service;
 use app\goods_module\working_version\v1\validator\GoodsValidate;
 use app\goods_module\working_version\v1\dao\GoodsDao;
+use app\goods_module\working_version\v1\model\GoodsModel;
 
 class GoodsService
 {
@@ -130,7 +131,12 @@ class GoodsService
         );
         // 验证文件是否上传
         if($image['msg']=='success') {
-            if(unlink('.'.$put['goodsFile']));
+            // 实例化数据库模型
+            $goodsModel = GoodsModel::where(
+                'apple_index',
+                $put['goodsIndex']
+            )->find();
+            if(unlink('.'.$goodsModel['apple_image']));
             $put['goodsFile'] = $image['data'];
         }else{
             // 判断是否发送URL路径地址信息
