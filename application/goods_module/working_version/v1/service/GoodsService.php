@@ -136,7 +136,7 @@ class GoodsService
                 'apple_index',
                 $put['goodsIndex']
             )->find();
-            if(unlink('.'.$goodsModel['apple_image']));
+            if(@unlink('.'.$goodsModel['apple_image']));
             $put['goodsFile'] = $image['data'];
         }else{
             // 判断是否发送URL路径地址信息
