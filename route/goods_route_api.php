@@ -31,6 +31,13 @@ Route::group('v1/goods_module/', function(){
         'goods_route/:token',
         'goods_module/v1.controller.GoodsController/goodsPost'
     );
+    /**
+     * 传值方式：GET 路由功能：获取商品列表数据信息
+     */
+    Route::get(
+        'goods_route/:token',
+        'goods_module/v1.controller.GoodsController/goodsGet'
+    );
 
 })->middleware('Right_v3_IsAdmin');
 

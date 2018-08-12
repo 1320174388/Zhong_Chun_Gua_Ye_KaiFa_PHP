@@ -40,4 +40,26 @@ class GoodsController extends Controller
         return returnResponse(0,'请求成功',$R['data']);
 
     }
+
+    /**
+     * 名  称 : goodsGet()
+     * 功  能 : 获取商品列表数据信息
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $get['shopId'] => '店铺ID';
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":"数据"}
+     * 创  建 : 2018/08 12 19:44
+     */
+    public function goodsGet(Request $request)
+    {
+        // 实例化逻辑层代码
+        $goodsService = new GoodsService();
+        // 执行获取所有店铺所有数据接口
+        $R = $goodsService->goodsList($request->get());
+        // 验证返回数据
+        if($R['msg']=='error') return returnResponse(
+            1,$R['data']
+        );
+        // 返回正确数据
+        return returnResponse(0,'请求成功',$R['data']);
+    }
 }

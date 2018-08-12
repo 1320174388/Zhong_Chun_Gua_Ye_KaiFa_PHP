@@ -54,7 +54,34 @@ class GoodsService
         // 写入数据
         $goodsSave = $goodsDao->goodsAdd($post);
         // 判断是否保存成功
-        if(!$goodsSave['msg']='error') return returnData(
+        if($goodsSave['msg']=='error') return returnData(
+            'error',
+            $goodsSave['data']
+        );
+        // 返回正确数据
+        return returnData('error',$goodsSave['data']);
+    }
+
+    /**
+     * 名  称 : goodsList()
+     * 功  能 : 获取商品列表数据信息
+     * 输  入 : (string) $get['shopId'] => '店铺ID';
+     * 输  出 : ['msg'=>'success','data'=>"商品列表数据"]
+     * 创  建 : 2018/08 12 19:44
+     */
+    public function goodsList($get)
+    {
+        // 验证店铺ID是否上传
+        if(empty($get['shopId'])) return returnData(
+            'error',
+            '请发送店铺ID'
+        );
+        // 实例化数据层代码
+        $goodsDao = new GoodsDao();
+        // 获取数据
+        $goodsSave = $goodsDao->goodsAll($get);
+        // 判断是否保存成功
+        if($goodsSave['msg']=='error') return returnData(
             'error',
             $goodsSave['data']
         );
