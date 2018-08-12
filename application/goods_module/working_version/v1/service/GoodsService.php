@@ -167,7 +167,7 @@ class GoodsService
     public function goodsDels($delete)
     {
         // 验证是否发送商品标识
-        if(empty($put['goodsIndex']))return returnData(
+        if(empty($delete['goodsIndex']))return returnData(
             'error','请发送商品标识'
         );
         // 实例化数据层代码
