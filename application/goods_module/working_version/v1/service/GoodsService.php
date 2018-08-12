@@ -60,7 +60,7 @@ class GoodsService
             $goodsSave['data']
         );
         // 返回正确数据
-        return returnData('error',$goodsSave['data']);
+        return returnData('success',$goodsSave['data']);
     }
 
     /**
