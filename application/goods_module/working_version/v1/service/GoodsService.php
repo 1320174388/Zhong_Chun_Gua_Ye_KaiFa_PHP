@@ -122,10 +122,6 @@ class GoodsService
         if(empty($put['goodsIndex']))return returnData(
             'error','请发送商品标识'
         );
-        // 判断是否发送URL路径地址信息
-        if(empty($put['goodsFile'])) return returnData(
-            'error','请发送原图片URL路径地址'
-        );
         // 处理文件上传资源信息
         $image = imageUploads(
             'goodsFile',
@@ -136,6 +132,11 @@ class GoodsService
         if($image['msg']=='success') {
             if(unlink('.'.$put['goodsFile']));
             $put['goodsFile'] = $image['data'];
+        }else{
+            // 判断是否发送URL路径地址信息
+            if(empty($put['goodsFile'])) return returnData(
+                'error','请发送原图片URL路径地址'
+            );
         }
         // 实例化数据层代码
         $goodsDao = new GoodsDao();
