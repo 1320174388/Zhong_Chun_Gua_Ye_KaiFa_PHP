@@ -49,4 +49,13 @@ interface GoodsIntreface
      * 创  建 : 2018/08/13 00:34
      */
     public function goodsEdits($put);
+
+    /**
+     * 名  称 : goodsDelete()
+     * 功  能 : 执行删除商品数据逻辑
+     * 输  入 : (string) $delete['goodsIndex'] => '商品标识';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/13 00:58
+     */
+    public function goodsDelete($delete);
 }

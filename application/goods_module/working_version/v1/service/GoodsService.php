@@ -156,4 +156,30 @@ class GoodsService
         // 返回正确数据
         return returnData('success',$goodsSave['data']);
     }
+
+    /**
+     * 名  称 : goodsDels()
+     * 功  能 : 执行删除商品信息逻辑
+     * 输  入 : (string) $delete['goodsIndex'] => '商品标识';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/13 00:58
+     */
+    public function goodsDels($delete)
+    {
+        // 验证是否发送商品标识
+        if(empty($put['goodsIndex']))return returnData(
+            'error','请发送商品标识'
+        );
+        // 实例化数据层代码
+        $goodsDao = new GoodsDao();
+        // 删除数据
+        $goodsSave = $goodsDao->goodsDelete($delete);
+        // 判断是否保存成功
+        if($goodsSave['msg']=='error') return returnData(
+            'error',
+            $goodsSave['data']
+        );
+        // 返回正确数据
+        return returnData('success',$goodsSave['data']);
+    }
 }

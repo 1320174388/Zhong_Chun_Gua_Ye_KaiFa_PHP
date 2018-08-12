@@ -110,4 +110,30 @@ class GoodsDao implements GoodsIntreface
         // 返回正确数据
         return returnData('success','修改成功');
     }
+
+    /**
+     * 名  称 : goodsDelete()
+     * 功  能 : 执行删除商品数据逻辑
+     * 输  入 : (string) $delete['goodsIndex'] => '商品标识';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/13 00:58
+     */
+    public function goodsDelete($delete)
+    {
+        // 实例化数据库模型
+        $goodsModel = GoodsModel::where(
+            'apple_index',
+            $delete['goodsIndex']
+        )->find();
+        // 删除图片文件
+        if(@unlink('.'.$goodsModel['apple_image']));
+        // 删除数据
+        $del = $goodsModel->delete();
+        // 判断是否删除成功
+        if($del) return returnData(
+            'error','删除失败'
+        );
+        // 返回正确数据
+        return returnData('success','删除成功');
+    }
 }

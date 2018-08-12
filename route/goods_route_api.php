@@ -45,6 +45,13 @@ Route::group('v1/goods_module/', function(){
         'goods_post/:token',
         'goods_module/v1.controller.GoodsController/goodsPut'
     );
+    /**
+     * 传值方式：DELETE 路由功能：执行删除商品操作
+     */
+    Route::delete(
+        'goods_route/:token',
+        'goods_module/v1.controller.GoodsController/goodsDel'
+    );
 
 })->middleware('Right_v3_IsAdmin');
 

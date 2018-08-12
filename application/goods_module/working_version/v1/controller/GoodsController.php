@@ -92,4 +92,26 @@ class GoodsController extends Controller
         // 返回正确数据
         return returnResponse(0,$R['data'],true);
     }
+
+    /**
+     * 名  称 : goodsPut()
+     * 功  能 : 执行删除商品操作
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $delete['goodsIndex'] => '商品标识';
+     * 输  出 : {"errNum":0,"retMsg":"删除成功","retData":true}
+     * 创  建 : 2018/08/13 00:58
+     */
+    public function goodsDel(Request $request)
+    {
+        // 实例化逻辑层代码
+        $goodsService = new GoodsService();
+        // 执行删除商品接口
+        $R = $goodsService->goodsDels($request->delete());
+        // 验证返回数据
+        if($R['msg']=='error') return returnResponse(
+            1,$R['data']
+        );
+        // 返回正确数据
+        return returnResponse(0,$R['data'],true);
+    }
 }
