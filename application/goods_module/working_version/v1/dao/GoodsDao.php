@@ -130,7 +130,7 @@ class GoodsDao implements GoodsIntreface
         // 删除数据
         $del = $goodsModel->delete();
         // 判断是否删除成功
-        if($del) return returnData(
+        if(!$del) return returnData(
             'error','删除失败'
         );
         // 返回正确数据
