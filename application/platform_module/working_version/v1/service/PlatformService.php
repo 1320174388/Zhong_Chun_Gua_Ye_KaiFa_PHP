@@ -173,6 +173,9 @@ class PlatformService
         // 返回结果
         if ($result['msg'] == 'success')
         {
+            //删除图片
+            $imgUrl = (new ClassDao())->queryIndex($data['class_index']);
+            @unlink('.'.$imgUrl['data']['apple_image']);
             return returnData('success',$result['data']);
         }else{
             return returnData('error',$result['data']);

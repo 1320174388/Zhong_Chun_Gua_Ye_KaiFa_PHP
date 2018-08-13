@@ -55,6 +55,27 @@ class ClassDao
         }
     }
     /**
+     * 名    称：queryIndex()
+     * 功    能：查询指定分类数据
+     * 输    入：(string)  $class_Index     =>  `分类主键`
+     * 输  出 : [ 'msg' => 'success', 'data' => $data ]
+     * 输  出 : [ 'msg' => 'error',  'data' => '没有数据' ]
+     */
+    public function queryIndex($class_index)
+    {
+        //执行数据查询
+        $result = (new ClassModel())->where('class_index',$class_index)
+            ->find();
+        //返回结果
+        if ($result)
+        {
+            return returnData('success',$result->toArray());
+        }else
+        {
+            return  returnData('error','没有数据');
+        }
+    }
+    /**
      * 名    称：queryAll()
      * 功    能：查询所有分类
      * 输  出 : [ 'msg' => 'success', 'data' => $data ]

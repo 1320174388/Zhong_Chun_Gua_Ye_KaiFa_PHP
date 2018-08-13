@@ -82,7 +82,7 @@ class IndexController extends Controller
      * 功    能：删除分类
      * 输    入：(string)  $class_index     =>  `分类标识`
      * 输    出：{"errNum":0,"retMsg":"删除成功","retData": true
-     * 输    出: {"errNum":1,"retMsg":"删除失败","retData":
+     * 输    出: {"errNum":1,"retMsg":"删除失败","retData": '提示信息'
      */
     public function delectClass()
     {

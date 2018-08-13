@@ -1,7 +1,7 @@
 <?php
 /**
  *  版权声明 :  地老天荒科技有限公司
- *  文件名称 :  platform_route_v3_api.php
+ *  文件名称 :  platform_route_v1_api.php
  *  创 建 者 :  Feng TianShui
  *  创建日期 :  2018/08/09 15:04
  *  文件描述 :  模块路由地址
@@ -12,7 +12,7 @@
 // | 类型：POST
 // +----------------------------------------------------------------------
 route::post(
-    'v1/platform_module/addClass',
+    'v1/platform_module/addClass/:token',
     'platform_module/v1.controller.IndexController/addClass'
 )->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
@@ -28,7 +28,7 @@ route::get(
 // | 类型：POST
 // +----------------------------------------------------------------------
 route::post(
-    'v1/platform_module/updateClass',
+    'v1/platform_module/updateClass/:token',
     'platform_module/v1.controller.IndexController/updateClass'
 )->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
@@ -36,7 +36,7 @@ route::post(
 // | 类型：GET
 // +----------------------------------------------------------------------
 route::get(
-    'v1/platform_module/delectClass',
+    'v1/platform_module/delectClass/:token',
     'platform_module/v1.controller.IndexController/delectClass'
 )->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
@@ -44,7 +44,7 @@ route::get(
 // | 类型：GET
 // +----------------------------------------------------------------------
 route::get(
-    'v1/platform_module/setState',
+    'v1/platform_module/setState/:token',
     'platform_module/v1.controller.StoreController/setState'
 )->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
@@ -52,7 +52,7 @@ route::get(
 // | 类型：GET
 // +----------------------------------------------------------------------
 route::get(
-    'v1/platform_module/getVendor',
+    'v1/platform_module/getVendor/:token',
     'platform_module/v1.controller.StoreController/getVendor'
 )->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
@@ -68,6 +68,6 @@ route::get(
 // | 类型：GET
 // +----------------------------------------------------------------------
 route::get(
-    'v1/platform_module/delectGoods',
+    'v1/platform_module/delectGoods/:token',
     'platform_module/v1.controller.StoreController/delectGoods'
 )->middleware('Right_v3_IsAdmin');
