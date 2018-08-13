@@ -115,4 +115,25 @@ class StoreDao
             return returnData('error','删除失败');
         }
     }
+    /**
+     * 名    称：querySingleGoods()
+     * 功    能：查询单个商品数据
+     * 输    入：(string)  $data       => `商品主键`
+     * 输  出 : [ 'msg' => 'success', 'data' => $data ]
+     * 输  出 : [ 'msg' => 'error',  'data' => '没有数据' ]
+     */
+    public function querySingleGoods($data)
+    {
+        //执行模型查询
+        $result = (new ShopApplesModel())->where('apple_index',$data)->find();
+        //返回结果
+        if ($result)
+        {
+            return returnData('success',$result->toArray());
+        }else
+        {
+            return returnData('error','没有数据');
+        }
+    }
+
 }
