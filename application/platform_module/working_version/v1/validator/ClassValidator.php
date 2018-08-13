@@ -20,13 +20,11 @@ class ClassValidator extends Validate
     protected $rule = [
         'class_index'   =>  'require',
         'class_name'    =>  'require',
-        'class_img_url' =>  'require',
         'class_price'   =>  'require'
     ];
     protected $message = [
         'class_index.require'   =>  '分类标识class_index不能为空',
         'class_name.require'    =>  '分类名称class_name不能为空',
-        'class_img_url.require' =>  '分类图片路径class_img_url不能为空',
         'class_price.require'   =>  '分类价格class_price不能为空'
     ];
 }

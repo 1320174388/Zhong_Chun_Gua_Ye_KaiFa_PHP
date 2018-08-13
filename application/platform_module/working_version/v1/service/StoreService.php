@@ -124,7 +124,7 @@ class StoreService
         {
             //删除图片资源
             $imgUrl = (new StoreDao())->querySingleGoods($data['apple_index']);
-            @unlink($imgUrl['data']['apple_image']);
+            @unlink('.'.$imgUrl['data']['apple_image']);
             return returnData('success',$result['data']);
         }else
         {

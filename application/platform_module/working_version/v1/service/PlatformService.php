@@ -16,7 +16,7 @@ class PlatformService
 {
     /**
      * 名    称：addClassService()
-     * 功    能：验证分类数据并执行数据访问层
+     * 功    能：添加分类数据并执行数据层
      * 输    入：(array)   $data   =>  `名称、图片路径、价格`
      * 输    出：[ 'msg' => 'success', 'data' => $data ]
      * 输    出：[ 'msg' => 'error',  'data' => $data ]
@@ -26,11 +26,9 @@ class PlatformService
         //验证数据
         $validate = new Validate([
             'class_name'    =>  'require',
-            'class_img_url' =>  'require',
             'class_price'   => 'require'
         ],[
             'class_name.require'    =>  '分类名称class_name不能为空',
-            'class_img_url.require' =>  '分类图片class_img_url不能为空',
             'class_price.require'   => '分类价格class_price不能为空'
         ]);
         //返回数据错误
@@ -38,6 +36,21 @@ class PlatformService
         {
             return returnData('error',$validate->getError());
         }
+
+        // 处理文件上传资源信息
+        $image = imageUploads(
+            'classFile',
+            './uploads/class/',
+            '/uploads/class/'
+        );
+        // 验证文件是否上传
+        if($image['msg']=='error') return returnData(
+            'error',
+            $image['data']
+        );
+        // 获取正确文件URL地址
+        $data['class_img_url'] = $image['data'];
+
         //创建数据访问对象
         $classOpject = new ClassDao();
         //验证分类名是否重复
@@ -107,6 +120,27 @@ class PlatformService
         if (!$validator->check($data))
         {
             return returnData('error',$validator->getError());
+        }
+        // 处理文件上传资源信息
+        $image = imageUploads(
+            'classFile',
+            './uploads/class/',
+            '/uploads/class/'
+        );
+        // 验证文件是否上传
+        if($image['msg']=='success') {
+            // 实例化数据库模型
+            $model = ClassDao::where(
+                'class_index',
+                $data['class_index']
+            )->find();
+            @unlink('.'.$model['class_img_url']);
+            $data['class_img_url'] = $image['data'];
+        }else{
+            // 判断是否发送URL路径地址信息
+            if(empty($data['classFile'])) return returnData(
+                'error','请发送原图片URL路径地址'
+            );
         }
         // 传入数据执行数据操作层
         $result = (new ClassDao())->modifyClass($data);
