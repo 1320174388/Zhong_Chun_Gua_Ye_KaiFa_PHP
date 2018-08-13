@@ -175,7 +175,7 @@ class PlatformService
         {
             //删除图片
             $imgUrl = (new ClassDao())->queryIndex($data['class_index']);
-            @unlink('.'.$imgUrl['data']['apple_image']);
+            @unlink('.'.$imgUrl['data']['class_img_url']);
             return returnData('success',$result['data']);
         }else{
             return returnData('error',$result['data']);
