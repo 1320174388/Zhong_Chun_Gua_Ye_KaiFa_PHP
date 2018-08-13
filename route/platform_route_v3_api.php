@@ -14,7 +14,7 @@
 route::post(
     'v1/platform_module/addClass',
     'platform_module/v1.controller.IndexController/addClass'
-);
+)->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
 // | 功能：获取分类
 // | 类型：GET
@@ -30,7 +30,7 @@ route::get(
 route::post(
     'v1/platform_module/updateClass',
     'platform_module/v1.controller.IndexController/updateClass'
-);
+)->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
 // | 功能：删除分类
 // | 类型：GET
@@ -38,7 +38,7 @@ route::post(
 route::get(
     'v1/platform_module/delectClass',
     'platform_module/v1.controller.IndexController/delectClass'
-);
+)->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
 // | 功能：设置店铺开关
 // | 类型：GET
@@ -46,7 +46,7 @@ route::get(
 route::get(
     'v1/platform_module/setState',
     'platform_module/v1.controller.StoreController/setState'
-);
+)->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
 // | 功能：查询商家信息
 // | 类型：GET
@@ -54,7 +54,7 @@ route::get(
 route::get(
     'v1/platform_module/getVendor',
     'platform_module/v1.controller.StoreController/getVendor'
-);
+)->middleware('Right_v3_IsAdmin');
 // +----------------------------------------------------------------------
 // | 功能：获取店铺商品信息
 // | 类型：GET
@@ -70,4 +70,4 @@ route::get(
 route::get(
     'v1/platform_module/delectGoods',
     'platform_module/v1.controller.StoreController/delectGoods'
-);
+)->middleware('Right_v3_IsAdmin');

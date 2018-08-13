@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b539eaf-c196-43c6-a030-7be440fcd407" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/validator/ClassValidator.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/validator/ClassValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/route/platform_route_v3_api.php" afterPath="$PROJECT_DIR$/route/platform_route_v3_api.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,16 +14,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2298">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PlatformService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -56,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StoreService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="126" column="24" lean-forward="false" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+            <state relative-caret-position="4176">
+              <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -69,8 +57,28 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="38" />
+            <state relative-caret-position="288">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="business_route_v1_api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/route/business_route_v1_api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="platform_route_v3_api.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/route/platform_route_v3_api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2340">
+              <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -119,6 +127,7 @@
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/validator/ClassValidator.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" />
+        <option value="$PROJECT_DIR$/route/platform_route_v3_api.php" />
       </list>
     </option>
   </component>
@@ -158,6 +167,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Zhong_Chun_Gua_Ye_KaiFa_PHP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhong_Chun_Gua_Ye_KaiFa_PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zhong_Chun_Gua_Ye_KaiFa_PHP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="route" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -511,12 +534,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534128844889</updated>
-      <workItem from="1534128847555" duration="5363000" />
+      <workItem from="1534128847555" duration="5965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5363000" />
+    <option name="totallyTimeSpent" value="5965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
@@ -600,14 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -618,8 +633,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="126" column="24" lean-forward="false" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+        <state relative-caret-position="4176">
+          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/business_route_v1_api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/platform_route_v3_api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
           <folding />
         </state>
       </provider>
