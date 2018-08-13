@@ -31,7 +31,7 @@ class IndexController extends Controller
         {
             return returnResponse(0,'添加成功',$result['data']);
         }else{
-            return returnResponse(1,'添加失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -52,7 +52,7 @@ class IndexController extends Controller
         {
             return returnResponse(0,'获取成功',$result['data']);
         }else{
-            return returnResponse(1,'获取失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -74,7 +74,7 @@ class IndexController extends Controller
         {
             return returnResponse(0,'修改成功',true);
         }else{
-            return returnResponse(1,'修改失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -93,7 +93,7 @@ class IndexController extends Controller
         {
             return returnResponse(0,'删除成功',true);
         }else{
-            return returnResponse(1,'删除失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
 }

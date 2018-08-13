@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b539eaf-c196-43c6-a030-7be440fcd407" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" afterPath="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +15,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlatformService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlatformService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="164">
@@ -57,18 +58,18 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
+            <state relative-caret-position="324">
+              <caret line="95" column="57" lean-forward="false" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StoreController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="40" />
+            <state relative-caret-position="324">
+              <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -78,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/route/business_route_v1_api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
+              <caret line="48" column="2" lean-forward="false" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -110,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/application/goods_module/working_version/v1/service/GoodsService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="145" column="9" lean-forward="true" selection-start-line="125" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
+              <caret line="145" column="9" lean-forward="false" selection-start-line="125" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -128,11 +129,12 @@
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/dao/StoreDao.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/validator/ClassValidator.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/service/StoreService.php" />
-        <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php" />
         <option value="$PROJECT_DIR$/route/platform_route_v3_api.php" />
         <option value="$PROJECT_DIR$/route/platform_route_v1_api.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/dao/ClassDao.php" />
         <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/service/PlatformService.php" />
+        <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php" />
       </list>
     </option>
   </component>
@@ -543,7 +545,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hang_Xi_Sahng_Cheng_Xiang_Mu_KaiiFa" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -632,12 +634,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534128844889</updated>
-      <workItem from="1534128847555" duration="11088000" />
+      <workItem from="1534128847555" duration="12390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11088000" />
+    <option name="totallyTimeSpent" value="12390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
@@ -700,7 +702,7 @@
     <entry file="file://$PROJECT_DIR$/application/goods_module/working_version/v1/service/GoodsService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="145" column="9" lean-forward="true" selection-start-line="125" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
+          <caret line="145" column="9" lean-forward="false" selection-start-line="125" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -708,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/route/business_route_v1_api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
+          <caret line="48" column="2" lean-forward="false" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -717,22 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -775,6 +761,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="177" column="54" lean-forward="false" selection-start-line="177" selection-start-column="54" selection-end-line="177" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="95" column="57" lean-forward="false" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/platform_module/working_version/v1/controller/StoreController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
           <folding />
         </state>
       </provider>

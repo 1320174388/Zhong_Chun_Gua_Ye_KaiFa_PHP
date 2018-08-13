@@ -32,7 +32,7 @@ class StoreController extends Controller
             return returnResponse(0,'设置成功',true);
         }else
         {
-            return returnResponse(1,'设置失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -56,7 +56,7 @@ class StoreController extends Controller
             return returnResponse(0,'获取成功',$result['data']);
         }else
         {
-            return returnResponse(1,'获取失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -76,7 +76,7 @@ class StoreController extends Controller
             return returnResponse(0,'获取成功',$result['data']);
         }else
         {
-            return returnResponse(1,'获取失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
     /**
@@ -96,7 +96,7 @@ class StoreController extends Controller
             return returnResponse(0,'删除成功',true);
         }else
         {
-            return returnResponse(1,'删除失败',$result['data']);
+            return returnResponse(1,$result['data'],false);
         }
     }
 }
