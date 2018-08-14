@@ -13,6 +13,14 @@ use app\balance_module\working_version\v1\dao\BalanceDao;
 class BalanceService
 {
 
+    /**
+     * 名  称 : BalanceSel()
+     * 功  能 : 商铺零钱信息逻辑
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $balanceSel['shop_id']     => '店铺主键';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/11 11:07
+     */
     public function BalanceSel($balanceSel)
     {
         // 引入BalanceDao层
