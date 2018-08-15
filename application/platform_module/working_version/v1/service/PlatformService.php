@@ -63,7 +63,7 @@ class PlatformService
         //传入数据执行数据访问层
         $result = $classOpject->add($data);
         //返回结果
-        if ($result)
+        if ($result['msg'] == 'success')
         {
             return returnData('success',$result['data']);
         }else{
