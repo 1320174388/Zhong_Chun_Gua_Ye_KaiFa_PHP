@@ -118,12 +118,12 @@ class StoreService
         }
 
         //传入数据 执行操作
+        $imgUrl = (new StoreDao())->querySingleGoods($data['apple_index']);
         $result = (new StoreDao())->delectGoods($data['apple_index']);
         //返回结果
         if ($result['msg'] == 'success')
         {
             //删除图片资源
-            $imgUrl = (new StoreDao())->querySingleGoods($data['apple_index']);
             @unlink('.'.$imgUrl['data']['apple_image']);
             return returnData('success',$result['data']);
         }else

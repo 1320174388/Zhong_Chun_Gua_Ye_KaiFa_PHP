@@ -130,15 +130,12 @@ class PlatformService
         // 验证文件是否上传
         if($image['msg']=='success') {
             // 实例化数据库模型
-            $model = ClassDao::where(
-                'class_index',
-                $data['class_index']
-            )->find();
-            @unlink('.'.$model['class_img_url']);
+            $model = (new ClassDao())->queryIndex($data['class_index']);
+            @unlink('.'.$model['data']['class_img_url']);
             $data['class_img_url'] = $image['data'];
         }else{
             // 判断是否发送URL路径地址信息
-            if(empty($data['classFile'])) return returnData(
+            if(empty($data['class_img_url'])) return returnData(
                 'error','请发送原图片URL路径地址'
             );
         }
@@ -169,12 +166,12 @@ class PlatformService
             return returnData('error','分类标识class_index不能为空');
         }
         // 执行操作
+        $imgUrl = (new ClassDao())->queryIndex($data['class_index']);
         $result = (new ClassDao())->delectClass($data['class_index']);
         // 返回结果
         if ($result['msg'] == 'success')
         {
             //删除图片
-            $imgUrl = (new ClassDao())->queryIndex($data['class_index']);
             @unlink('.'.$imgUrl['data']['class_img_url']);
             return returnData('success',$result['data']);
         }else{
