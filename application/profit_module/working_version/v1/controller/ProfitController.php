@@ -14,6 +14,14 @@ use app\profit_module\working_version\v1\service\ProfitService;
 
 class ProfitController extends Controller
 {
+    /**
+     * 名  称 : ProfitSel()
+     * 功  能 : 店铺收益控制器
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $profitSel['profit_id']     => '收益主键';
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":trun}
+     * 创  建 : 2018/08/11 10:55
+     */
     public function ProfitSel(Request $request)
     {
         // 获取数据

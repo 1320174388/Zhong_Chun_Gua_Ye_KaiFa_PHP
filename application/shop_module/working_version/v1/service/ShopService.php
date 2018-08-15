@@ -7,24 +7,23 @@
  *  文件描述 :  中春果业-店铺的零钱信息逻辑处理
  *  历史记录 :  -----------------------
  */
-namespace app\putforward_module\working_version\v1\service;
-use app\putforward_module\working_version\v1\dao\PutforwardDao;
+namespace app\shop_module\working_version\v1\service;
+use app\shop_module\working_version\v1\dao\ShopDao;
 
-class PutforwardService
+class ShopService
 {
-
     /**
-     * 名  称 : PutforwardSel()
-     * 功  能 : 个人提现信息逻辑
+     * 名  称 : ShopSel()
+     * 功  能 : 店铺的订单逻辑
      * 变  量 : --------------------------------------
-     * 输  入 : (string) $PutforwardSel['user_token']     => '提现主键';
-     * 输  出 : ['msg'=>'success','data'=>true]
-     * 创  建 : 2018/08/11 11:07
+     * 输  入 : (string) $shopSel['order_status']     => '订单状态';
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":trun}
+     * 创  建 : 2018/08/11 10:55
      */
-    public function PutforwardSel($PutforwardSel)
+    public function ShopSel($shopSel,$shopId)
     {
-        // 引入PutforwardDao层
-        $balance = (new PutforwardDao())->PutforwardSel($PutforwardSel);
+        // 引入Dao层
+        $balance = (new ShopDao())->ShopSel($shopSel,$shopId);
         // 判断是否有数据
         if($balance['msg']=='error') return returnData('error');
         // 返回数据格式

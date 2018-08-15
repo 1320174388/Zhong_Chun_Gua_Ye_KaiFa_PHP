@@ -14,6 +14,14 @@ use app\balance_module\working_version\v1\service\BalanceService;
 
 class BalanceController extends Controller
 {
+    /**
+     * 名  称 : BalanceSel()
+     * 功  能 : 商铺零钱控制器
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $request['shop_id']     => '店铺主键';
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":trun}
+     * 创  建 : 2018/08/11 10:55
+     */
     public function BalanceSel(Request $request)
     {
         // 获取职位数据

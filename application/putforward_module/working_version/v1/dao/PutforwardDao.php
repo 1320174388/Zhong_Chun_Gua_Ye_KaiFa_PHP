@@ -13,6 +13,13 @@ use app\putforward_module\working_version\v1\model\PutforwardModel;
 class PutforwardDao
 {
 
+    /**
+     * 名  称 : PutforwardSel()
+     * 功  能 : 个人提现数据
+     * 输  入 : (string) $PutforwardSel['user_token']     => '提现主键';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/11 11:43
+     */
     public function PutforwardSel($PutforwardSel)
     {
         // 实例化model

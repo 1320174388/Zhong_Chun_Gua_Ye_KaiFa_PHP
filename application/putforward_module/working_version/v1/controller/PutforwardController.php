@@ -14,6 +14,14 @@ use app\putforward_module\working_version\v1\service\PutforwardService;
 
 class PutforwardController extends Controller
 {
+    /**
+     * 名  称 : PutforwardSel()
+     * 功  能 : 个人提现控制器
+     * 变  量 : --------------------------------------
+     * 输  入 : (string) $request['user_token']     => '提现主键';
+     * 输  出 : {"errNum":0,"retMsg":"请求成功","retData":trun}
+     * 创  建 : 2018/08/11 10:55
+     */
 
     public function PutforwardSel(Request $request)
     {

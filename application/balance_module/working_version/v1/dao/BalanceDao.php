@@ -13,6 +13,13 @@ use app\balance_module\working_version\v1\model\BalanceModel;
 class BalanceDao
 {
 
+    /**
+     * 名  称 : BalanceSel()
+     * 功  能 : 添加商品信息数据
+     * 输  入 : (string) $balanceSel['shop_id']     => '店铺主键';
+     * 输  出 : ['msg'=>'success','data'=>true]
+     * 创  建 : 2018/08/11 11:43
+     */
     public function BalanceSel($balanceSel)
     {
         // 实例化model
